@@ -16,7 +16,8 @@ export default function Recipes() {
           recipes for you
         </p>
 
-        <h1 className="mt-2 text-6xl font-bold">
+        <h1 className=" text-6xl  tracking-tight"
+            style={{ fontFamily: "var(--font-caveat)"}}>
           {craving ? `${craving} things` : "All recipes"}
         </h1>
 
@@ -25,7 +26,7 @@ export default function Recipes() {
           {filteredRecipes.map((recipe) => (
             <div
               key={recipe.name}
-              className="rounded-3xl bg-[#ebe3d5] p-6 transition hover:-translate-y-1"
+              className=" bg-[#ebe3d5] p-6 transition hover:scale-105 hover:shadow-lg"
             >
               <div className="flex h-48 items-center justify-center text-8xl">
                 {recipe.emoji}
@@ -41,7 +42,7 @@ export default function Recipes() {
 
               <div className="mt-5 flex gap-4 text-sm text-[var(--muted)]">
                 <span>{recipe.time} min</span>
-                <span>•</span>
+                <span>|</span>
                 <span>{recipe.difficulty}</span>
               </div>
             </div>
