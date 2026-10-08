@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <Navbar />
 
-      <section className= "px-8 pb-24 pt-20">
+      <section className= "px-8 pb-24 pt-10">
         <div className="mx-auto max-w-6xl">
           <p className="mb-4 text-sm tracking-[0.30em] text-center text-[var(--muted)]">
             ✨COOK✨  WITH KENNY SONG
@@ -19,7 +19,7 @@ export default function Home() {
             Uwansum?
           </h1>
 
-          <div className="mt-8 rounded-full overflow-hidden flex justify-center">
+          <div className="mt-8 pb-8 rounded-full overflow-hidden flex justify-center">
           <Image
           src="/kenny.png"
           alt="Kenny Song"
