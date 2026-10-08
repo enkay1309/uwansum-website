@@ -1,9 +1,33 @@
+import { connectDB } from "@/lib/mongodb";
+import { Recipe } from "@/models/Recipe";
+
 export async function POST(request: Request) {
-  const data = await request.json();
+  try {
+    const data = await request.json();
 
-  console.log("Received:", data);
+    await connectDB();
 
-  return Response.json({
-    message: "Recipe received successfully!",
-  });
+    const newRecipe = await Recipe.create({
+      name: data.name,
+      email: data.email,
+      recipe: data.recipe,
+    });
+
+    console.log("Saved recipe:", newRecipe);
+
+    return Response.json({
+      message: "Recipe saved successfully!",
+    });
+  } catch (error) {
+    console.error("Database error:", error);
+
+    return Response.json(
+      {
+        message: "Failed to save recipe",
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }
