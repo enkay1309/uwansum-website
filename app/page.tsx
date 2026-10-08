@@ -1,6 +1,6 @@
-"use client";
 
-import { useState } from "react";
+import Link from "next/link";
+
 import Navbar from "@/components/navbar";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <Navbar />
 
-      <section className= "px-8 pb-24 pt-20">
+      <section className= "px-8 pb-24 pt-24">
         <div className="mx-auto max-w-6xl">
           <p className="mb-4 text-sm tracking-[0.30em] text-center text-[var(--muted)]">
             ✨COOK✨  WITH KENNY SONG
@@ -46,47 +46,63 @@ export default function Home() {
           <div className="relative h-[500px] overflow-hidden  bg-[#4c5669]">
 
             
-            <button className="absolute left-[10%] top-[20%] rotate-[-10deg] transition hover:scale-110">
+            <Link
+            href="/recipes?craving=sweet"
+             className="absolute left-[10%] top-[20%] rotate-[-10deg] transition hover:scale-110">
               <div className="text-7xl">🍰</div>
               <p className="mt-1 text-sm">Sweet?</p>
-            </button>
+            </Link>
 
             
-            <button className="absolute left-[30%] top-[10%] rotate-[8deg] transition hover:scale-110">
+            <Link
+            href="/recipes?craving=comforting"
+             className="absolute left-[30%] top-[10%] rotate-[8deg] transition hover:scale-110">
               <div className="text-7xl">🍜</div>
               <p className="mt-1 text-sm">Comforting?</p>
-            </button>
+            </Link>
 
-            <button className="absolute right-[25%] top-[15%] rotate-[-8deg] transition hover:scale-110">
+            <Link
+            href="/recipes?craving=lazy"
+             className="absolute right-[25%] top-[15%] rotate-[-8deg] transition hover:scale-110">
               <div className="text-7xl">🍟</div>
               <p className="mt-1 text-sm">Lazy?</p>
-            </button>
+            </Link>
 
             
-            <button className="absolute right-[8%] top-[32%] rotate-[15deg] transition hover:scale-110">
+            <Link
+            href="/recipes?craving=spicy"
+             className="absolute right-[8%] top-[32%] rotate-[15deg] transition hover:scale-110">
               <div className="text-7xl">🌶️</div>
               <p className="mt-1 text-sm">Spicy?</p>
-            </button>
+            </Link>
+            
 
             
-            <button className="absolute bottom-[15%] left-[15%] rotate-[10deg] transition hover:scale-110">
+            <Link
+            href="/recipes?craving=crispy"
+             className="absolute bottom-[15%] left-[15%] rotate-[10deg] transition hover:scale-110">
               <div className="text-7xl">🍘</div>
               <p className="mt-1 text-sm">Crispy?</p>
-            </button>
+            </Link>
 
             
-            <button className="absolute bottom-[8%] left-[42%] rotate-[-7deg] transition hover:scale-110">
+            <Link
+            href="/recipes?craving=healthy"
+             className="absolute bottom-[8%] left-[42%] rotate-[-7deg] transition hover:scale-110">
               <div className="text-7xl">🥑</div>
               <p className="mt-1 text-sm">Healthy?</p>
-            </button>
+            </Link>
 
             
-            <button className="absolute bottom-[14%] right-[12%] rotate-[12deg] transition hover:scale-110">
+            <Link
+            href="/recipes?craving=creamy"
+             className="absolute bottom-[14%] right-[12%] rotate-[12deg] transition hover:scale-110">
               <div className="text-7xl">🍮</div>
               <p className="mt-1 text-sm">Creamy?</p>
-            </button>
+            </Link>
+            
 
-            {/* Center text */}
+            
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
               <p className="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
                 The kitchen

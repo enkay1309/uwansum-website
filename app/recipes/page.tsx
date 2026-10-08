@@ -1,5 +1,6 @@
 "use client";
-
+import Navbar from "@/components/navbar";
+import Link from "next/link";
 import {recipes} from "@/data/recipes";
 import {useSearchParams} from "next/navigation";
 
@@ -9,10 +10,11 @@ export default function Recipes() {
 
     const filteredRecipes= craving? recipes.filter((recipe) => recipe.craving === craving) : recipes;
     return (
-         <main className="px-8 py-12">
+         <main >
+            <Navbar />
       <div className="mx-auto max-w-6xl">
 
-        <p className="text-sm uppercase tracking-[0.25em] text-[var(--muted)]">
+        <p className="text-sm uppercase mb-3 tracking-[0.25em] text-[var(--muted)]">
           recipes for you
         </p>
 
@@ -26,13 +28,14 @@ export default function Recipes() {
           {filteredRecipes.map((recipe) => (
             <div
               key={recipe.name}
-              className=" bg-[#ebe3d5] p-6 transition hover:scale-105 hover:shadow-lg"
+              className=" bg-[#4c5669] p-6 transition hover:scale-105 hover:shadow-lg"
             >
               <div className="flex h-48 items-center justify-center text-8xl">
                 {recipe.emoji}
               </div>
 
-              <h2 className="mt-5 text-2xl font-semibold">
+              <h2 className="mt-5 text-4xl font-bold"
+              style={{ fontFamily: "var(--font-caveat)" }}>
                 {recipe.name}
               </h2>
 
@@ -45,6 +48,13 @@ export default function Recipes() {
                 <span>|</span>
                 <span>{recipe.difficulty}</span>
               </div>
+
+              <Link
+                href={`/recipes/${recipe.slug}`}
+                className="mt-6 inline-block text-sm font-medium underline underline-offset-4">
+
+                View recipe 
+                </Link>
             </div>
           ))}
 

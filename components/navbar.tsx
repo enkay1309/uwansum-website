@@ -9,8 +9,9 @@ export default function Navbar(){
 
             <div className= "flex items-center gap-8 text-sm">
                 <Link href="/">Home</Link>
-                <Link href="/">Recipes</Link>
-                <Link href="/">Pantry</Link>
+                <Link href="/recipes">Recipes</Link>
+                <Link href="/share">Share</Link>
+                
             </div>
         </nav>
     );
