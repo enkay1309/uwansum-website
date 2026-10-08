@@ -1,8 +1,15 @@
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Navbar from "@/components/navbar";
 import { recipes } from "@/data/recipes";
+
+export async function generateStaticParams() {
+  return recipes.map((recipe) => ({
+    slug: recipe.slug,
+  }));
+}
 
 export default async function RecipePage({
   params,
@@ -11,7 +18,7 @@ export default async function RecipePage({
 }) {
   const { slug } = await params;
 
-  const recipe = recipes.find((item) => item.slug === slug);
+  const recipe =recipes.find((item) => item.slug === slug);
 
   if (!recipe) {
     notFound();

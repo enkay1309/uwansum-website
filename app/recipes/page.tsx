@@ -3,8 +3,11 @@ import Navbar from "@/components/navbar";
 import Link from "next/link";
 import {recipes} from "@/data/recipes";
 import {useSearchParams} from "next/navigation";
+import { Suspense } from "react";
 
-export default function Recipes() {
+
+
+function RecipesContent() {
     const searchParams= useSearchParams();
     const craving = searchParams.get("craving");
 
@@ -62,5 +65,13 @@ export default function Recipes() {
 
       </div>
     </main>
+  );
+}
+
+export default function Recipes() {
+  return (
+    <Suspense fallback={<div className="p-8">Loading recipes...</div>}>
+      <RecipesContent />
+    </Suspense>
   );
 }

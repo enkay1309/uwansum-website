@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 import Link from "next/link";
 
 import Navbar from "@/components/navbar";
@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <Navbar />
 
-      <section className= "px-8 pb-24 pt-24">
+      <section className= "px-8 pb-24 pt-20">
         <div className="mx-auto max-w-6xl">
           <p className="mb-4 text-sm tracking-[0.30em] text-center text-[var(--muted)]">
             ✨COOK✨  WITH KENNY SONG
@@ -18,6 +18,16 @@ export default function Home() {
           style={{ fontFamily: "var(--font-caveat)" }}>
             Uwansum?
           </h1>
+
+          <div className="mt-8 rounded-full overflow-hidden flex justify-center">
+          <Image
+          src="/kenny.png"
+          alt="Kenny Song"
+          width={200}
+          height={200}
+          className="h-[300px] w-[300px] rounded-full object-cover"
+          />
+          </div>
 
           <p className=" mx-auto max-w-xl  leading-8 text-center tracking-tight text-[var(--muted)] ">
             Find something delicious to make, discover what you can cook with
@@ -119,9 +129,11 @@ export default function Home() {
           </div>
 
           <div className="mt-6 flex justify-center">
-            <button className="rounded-full bg-[var(--foreground)] px-8 py-4 text-sm font-medium text-[var(--background)] transition hover:scale-105">
+            <Link 
+            href="/recipes"
+            className="rounded-full bg-[var(--foreground)] px-8 py-4 text-sm font-medium text-[var(--background)] transition hover:scale-105">
               Find Recipes 
-            </button>
+            </Link>
           </div>
 
         </div>
