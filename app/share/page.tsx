@@ -5,11 +5,12 @@ import { useState } from "react";
 
 export default function Share() {
   const [submitted, setSubmitted] = useState(false);
-  async function handleSubmit(event: any) {
+  const [isSending, setIsSending] = useState(false);
+  
+async function handleSubmit(event: any) {
   event.preventDefault();
 
   const form = event.currentTarget;
-
   const formData = new FormData(form);
 
   const data = {
@@ -18,21 +19,40 @@ export default function Share() {
     recipe: formData.get("recipe"),
   };
 
-  const response = await fetch("/api/recipes", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  setIsSending(true);
 
-  const result = await response.json();
+  console.log("1. Form submitted:", data);
 
-  console.log(result);
+  try {
+    const response = await fetch("/api/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  setSubmitted(true);
-  form.reset();
+    console.log("2. Response status:", response.status);
+
+    const result = await response.json();
+    console.log("3. API response:", result);
+
+    if (!response.ok) {
+      alert(result.message || "Could not save recipe.");
+      return;
+    }
+
+    setSubmitted(true);
+    form.reset();
+  } catch (error) {
+    console.error("Request failed:", error);
+    alert("Request failed. Check the browser console.");
+  }finally {
+    setIsSending(false);
+  }
+
 }
+
 
   return (
     <main>
@@ -94,12 +114,15 @@ export default function Share() {
               className="mt-3 w-full border border-black text-black bg-white px-4 py-4 outline-none"
             />
 
-            <button
-            type="submit"
-              className="mt-5 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-[var(--background)] transition hover:scale-105"
-            >
-              Send recipe!
-            </button>
+            
+<button
+  type="submit"
+  disabled={isSending}
+  className="underline"
+>
+  {isSending ? "Sending..." : "Send recipe!"}
+</button>
+
 
           </form>
 

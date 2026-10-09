@@ -2,6 +2,7 @@ import { connectDB } from "@/lib/mongodb";
 import { Recipe } from "@/models/Recipe";
 
 export async function POST(request: Request) {
+  console.log("API ROUTE REACHED");
   try {
     const data = await request.json();
 
