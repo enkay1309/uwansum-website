@@ -56,7 +56,9 @@ export default async function RecipePage({
             </h1>
 
             <p className="mt-4 max-w-2xl leading-7 text-[var(--muted)]">
-              {recipe.description}
+              {recipe.description} 
+              
+              Google the recipe because I genuinely don't know.
             </p>
 
             <div className="mt-6 flex gap-6 text-sm text-[var(--muted)]">
