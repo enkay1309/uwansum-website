@@ -30,8 +30,9 @@ export default function Home() {
           </div>
 
           <p className=" mx-auto max-w-xl  leading-8 text-center tracking-tight text-[var(--muted)] ">
+            Kenny Song is a food creator on youtube who realised his passion after going through a lot of failures. 
             Find something delicious to make, discover what you can cook with
-            what you already have, and follow your cravings.
+            what you already have, and follow your cravings with Kenny.
           </p>
 
         </div>
