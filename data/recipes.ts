@@ -57,6 +57,16 @@ export const recipes: Recipe[] = [
     difficulty: "Easy",
     emoji: "🍜",
   },
+
+  {
+    name: "2 min- Ramen",
+    slug: "2-min-ramen",
+    description: "A warm bowl of noodles for the ultimate comfort meal.",
+    craving: "lazy",
+    time: 5,
+    difficulty: "Easy",
+    emoji: "🍜",
+  },
   {
     name: "Avocado Toast",
     slug: "avocado-toast",
