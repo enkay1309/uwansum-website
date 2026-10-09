@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KENNYSONG
+
+**Your next comfort-food craving starts here.**
+
+Uwansum is a food and recipe-sharing website inspired by the joy of discovering delicious, comforting meals. Users can explore a collection of recipes, view individual recipe details, and submit their own recipes through a simple interface.
+
+##  Features
+
+- **Home Page** — A welcoming landing page with a food-inspired design.
+- **Recipe Collection** — Browse a collection of recipes.
+- **Recipe Details** — View individual recipes on dedicated pages.
+- **Share a Recipe** — Submit a recipe with your name, email, and recipe details.
+- **Database Integration** — Uses MongoDB Atlas to store submitted recipes.
+- **Responsive Design** — A layout designed to work across different screen sizes.
+- **Deployment** — Built with Next.js and deployed using Vercel.
+
+##  Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Database:** MongoDB Atlas
+- **ODM:** Mongoose
+- **Deployment:** Vercel
+- **Version Control:** Git and GitHub
+
+##  Project Structure
+
+```text
+kenny-food/
+├── app/
+│   ├── api/
+│   │   └── recipes/
+│   │       └── route.ts
+│   ├── recipes/
+│   │   └── [slug]/
+│   ├── share/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+├── data/
+│   └── recipes.ts
+├── lib/
+│   └── mongodb.ts
+├── models/
+│   └── Recipe.ts
+├── public/
+├── .env.local
+├── .gitignore
+├── package.json
+└── README.md
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+- A MongoDB Atlas account
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/enkay1309/uwansum-website.git
+cd uwansum-website
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env.local` file in the project root and add your MongoDB Atlas connection string:
+
+```env
+MONGODB_URI="your-mongodb-atlas-connection-string"
+```
+
+Replace the placeholder with your actual connection string. Never commit `.env.local` or expose database credentials publicly.
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##  Database
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Uwansum uses MongoDB Atlas to store recipes submitted through the website. Mongoose defines the recipe schema and manages database interactions.
 
-## Learn More
+The application uses an API route to process recipe submissions and save them to the database.
 
-To learn more about Next.js, take a look at the following resources:
+##  Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project can be deployed using [Vercel](https://vercel.com/).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To deploy:
 
-## Deploy on Vercel
+1. Import the GitHub repository into Vercel.
+2. Add `MONGODB_URI` under the project's environment variables.
+3. Deploy the application.
+4. Test recipe submissions on the deployed website.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
