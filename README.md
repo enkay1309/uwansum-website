@@ -1,12 +1,12 @@
 # KENNYSONG
 
-**Your next comfort-food craving starts here.**
+**Your next food craving starts here.**
 
-Uwansum is a food and recipe-sharing website inspired by the joy of discovering delicious, comforting meals. Users can explore a collection of recipes, view individual recipe details, and submit their own recipes through a simple interface.
+Uwansum is a food and recipe sharing website inspired by the joy of discovering delicious meals according to your craving. Users can explore a collection of recipes, view individual recipe details, and submit their own recipes through a simple interface.
 
 ##  Features
 
-- **Home Page** — A welcoming landing page with a food-inspired design.
+- **Home Page** — A welcoming landing page with a food-inspired design, scroll down to get recipes according to your craving.
 - **Recipe Collection** — Browse a collection of recipes.
 - **Recipe Details** — View individual recipes on dedicated pages.
 - **Share a Recipe** — Submit a recipe with your name, email, and recipe details.
@@ -16,7 +16,7 @@ Uwansum is a food and recipe-sharing website inspired by the joy of discovering 
 
 ##  Tech Stack
 
-- **Framework:** Next.js (App Router)
+- **Framework:** Next.js (App Router), React
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Database:** MongoDB Atlas
@@ -79,10 +79,10 @@ npm install
 Create a `.env.local` file in the project root and add your MongoDB Atlas connection string:
 
 ```env
-MONGODB_URI="your-mongodb-atlas-connection-string"
+MONGODB_URI="mongodb+srv://kashyapnehal1309_db_user:drjI7CyfM7A4d6p3@kennydb.zen8tf3.mongodb.net/?appName=kennyDB"
 ```
 
-Replace the placeholder with your actual connection string. Never commit `.env.local` or expose database credentials publicly.
+
 
 ### 4. Start the development server
 
@@ -102,10 +102,6 @@ The application uses an API route to process recipe submissions and save them to
 
 The project can be deployed using [Vercel](https://vercel.com/).
 
-To deploy:
 
-1. Import the GitHub repository into Vercel.
-2. Add `MONGODB_URI` under the project's environment variables.
-3. Deploy the application.
-4. Test recipe submissions on the deployed website.
 
+##
