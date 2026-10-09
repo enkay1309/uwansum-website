@@ -33,7 +33,7 @@ export default async function RecipePage({
 
           <Link
             href="/recipes"
-            className="text-sm text-[var(--muted)] "
+            className="text-sm underline text-[var(--muted)] "
           >
              Back to recipes
           </Link>

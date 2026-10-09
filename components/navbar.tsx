@@ -8,9 +8,11 @@ export default function Navbar(){
             </Link>
 
             <div className= "flex items-center gap-8 text-sm">
-                <Link href="/">Home</Link>
-                <Link href="/recipes">Recipes</Link>
-                <Link href="/share">Share</Link>
+                <Link href="/"
+                className="hover:scale-105 hover:underline
+                ">Home</Link>
+                <Link href="/recipes" className="hover:scale-105 hover:underline">Recipes</Link>
+                <Link href="/share" className="hover:scale-105 hover:underline">Share</Link>
                 
             </div>
         </nav>
