@@ -82,7 +82,7 @@ npm install
 Create a `.env.local` file in the project root and add your MongoDB Atlas connection string:
 
 ```env
-MONGODB_URI="mongodb+srv://kashyapnehal1309_db_user:<pw>@kennydb.zen8tf3.mongodb.net/?appName=kennyDB"
+MONGODB_URI=your_mongodb_conn_string
 ```
 
 
