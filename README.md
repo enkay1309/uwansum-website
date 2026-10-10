@@ -25,7 +25,7 @@ Uwansum is a food and recipe sharing website inspired by the joy of discovering 
 - **Version Control:** Git and GitHub
 
 ## Website Link
-https://uwansum-website.vercel.app/
+https://uwansum-website-ba9lppz1h-enkay2.vercel.app/
 
 ##  Project Structure
 
